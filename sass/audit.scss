@@ -1,0 +1,22 @@
+@import "base";
+
+#audit-steps {
+	list-style: {
+		position: outside;
+		type: decimal;
+	}
+	
+	margin: 50px;
+	
+	li {
+		font-size: 50px;
+		margin-bottom: 30px;
+		vertical-align: top;
+		
+		h2 {
+			font-size: 30px;
+			display: inline-block;
+			height: 100%;
+		}
+	}
+}

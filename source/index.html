@@ -1,0 +1,122 @@
+---
+layout: default
+title: Your Analytics Experts
+description: EchoVantage provides marketing and web analytics services including Google Analytics audits and customer lifecycle modeling.
+keywords: marketing analytics, analytics audits, web analytics, customer lifecycle modeling
+stylesheets:
+  - /stylesheets/index.css
+scripts:
+  - https://sdk.amazonaws.com/js/aws-sdk-2.0.0-rc1.min.js
+  - javascripts/index.js
+---
+<header>
+	<div id="hero">
+		<div id="top-banner">
+			<h1>EchoVantage</h1>
+			<div id="social">
+				<a id="twitter-link" href="https://twitter.com/EchoVantage" target="_blank">
+					<i class="fa fa-twitter"></i>
+				</a>
+				<a id="linkedin-link" href="http://www.linkedin.com/company/echovantage" target="_blank">
+					<i class="fa fa-linkedin-square"></i>
+				</a>
+				<a id="google-plus-link" href="https://plus.google.com/110510209594507312685/posts" target="_blank">
+					<i class="fa fa-google-plus"></i>
+				</a>
+				<a id="facebook-link" href="https://www.facebook.com/echovantage" target="_blank">
+					<i class="fa fa-facebook-square"></i>
+				</a>
+			</div>
+		</div>
+		<h2>Make Big Data your biggest asset.</h2>
+		<p>Speak with one of our experts today:</p>
+		<form id="contact-form" action="http://api.localtest.com/messages?form_api_token=facd42faa81ecc6ebffbe88c6090f144" method="post">
+			<input id="phone" type="tel" pattern="\d{3}[\-\. ]?\d{3}[\-\. ]?\d{4}" name="phone" placeholder="Phone">
+			<span>or</span>
+			<input id="email" type="email" name="email" placeholder="Email">
+			<input id="request-consult" type="submit" value="Request Consult">
+			<p class="success message">Thank you for your interest. We'll be in touch shortly! <a href="#" class="close-link"><i class="fa fa-times"></i></a></p>
+			<p class="failure message">Oops, something went wrong. Try emailing us instead: <a href="mailto:info@echovantage.com">info@echovantage.com</a> <a href="#" class="close-link"><i class="fa fa-times"></i></a></p>
+		</form>
+	</div>
+	<nav id="top-nav">
+		<ul>
+			<li>
+				<a href="#audit">
+				<i class="fa fa-search"></i>
+				Analytics Audit
+				</a>
+			</li>
+			<li>
+				<a href="#projects">
+				<i class="fa fa-bar-chart-o"></i>
+				Custom Analytics Projects
+				</a>
+			</li>
+			<li>
+				<a href="#modeling">
+				<i class="fa fa-sitemap"></i>
+				Customer Modeling
+				</a>
+			</li>
+			<li>
+				<a href="#team">
+				<i class="fa fa-group"></i>
+				Who We Are
+				</a>
+			</li>
+			<li>
+				<a href="#">
+				<i class="fa fa-bullhorn"></i>
+				Blog
+				</a>
+			</li>
+		</ul>
+	</nav>
+</header>
+<section id="audit" class="svc-overview">
+	<div class="content">
+		<h1>Are you getting accurate, useful reports from your analytics tool?</h1>
+		<p>Our comprehensive analytics and data quality audits will identify the latent problems with your analytics installation that are preventing you from seeing an accurate representation of reality.</p>
+		<p><a href="#" class="more-info">Learn more</a> about our audit services.</p>
+	</div>
+	<div class="graphic" style="background-image: url('img/analytics.png')"></div>
+</section>
+<section id="projects" class="svc-overview">
+	<div class="content">
+		<h1>Translate your Big Data into Big Insights.</h1>
+		<p>Our team of experienced developers and data scientists can help you harness your data to drive business decisions. From strategic planning to implementation EchoVantage has the experts you need to realize your analytics goals.</p>
+		<p><a href="#" class="more-info">Learn more</a> about our custom development offerings.</p>
+	</div>
+	<div class="graphic" style="background-image: url('img/working2.jpg')">
+	</div>
+</section>
+<section id="modeling" class="svc-overview">
+	<div class="content">
+		<h1>Visualize your customers.</h1>
+		<p>How customers progress through the sales funnel is unique to your site. With our revolutionary visualization platform you can see which marketing programs are pushing visitors through the process and which aren't working.</p>
+		<p><a href="#" class="more-info">Learn more</a> about our customer lifecycle modeling platform.</p>
+	</div>
+	<div class="graphic" style="background-image: url('img/customer-modeling.png')">
+		<img style="position: absolute; top: 0; left: 0; border: 0; width: 100px; height: 100px;" src="img/beta-blue-ribbon.png" alt="Coming Soon">
+	</div>
+</section>
+<section id="team">
+	<h1>Our Team</h1>
+	<div class="member">
+		<img src="img/mike-deck.png">
+		<h2>Mike Deck</h2>
+		<p>Mike has several years of experience in software development and lifecycle management, working as a lead consultant for Fortune 500 companies in both technical and business analysis roles. He most recently worked as the Lead Technical Architect at SearchDex™, managing large-scale web solutions for e-retailers. Mike was instrumental in the birth of the EchoVantage platform, contributing to both the technical and business development.</p>
+	</div>
+	<div class="member">
+		<img src="img/mike-doberenz.png">
+		<h2>Mike Doberenz</h2>
+		<p>Trained as a classical mathematician with a master’s degree focused on the actuarial sciences, Michael has spent the bulk of his over 10 year software development career producing server software for high-load, high-availability applications. Much of this software has strong requirements for tracking, monitoring, and optimization across several disciplines from financial trading and reporting systems to search optimization and e-retail analytics.</p>
+	</div>
+	<div class="member">
+		<img src="img/sarah-kayfus.png">
+		<h2>Sarah Kayfus</h2>
+		<p>Sarah is a recent graduate of the Southern Methodist University M.B.A. program, studying marketing and business analytics. She was honored as a Cox Marketing Scholar by the faculty and is a member of Beta Gamma Sigma. Sarah previously worked at Levenson & Hill for Paramount Pictures, CBS Films, and Summit Entertainment, specializing in grassroots promotions and word-of-mouth marketing. She also has multiple years of experience in customer service and relationship management.</p>
+	</div>
+</section>
+{% include footer.html %}

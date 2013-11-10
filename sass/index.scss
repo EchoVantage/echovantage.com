@@ -1,0 +1,626 @@
+@import "base";
+@import "breakpoint";
+
+
+// Desktop Display Widths and Heights
+$max-content-width: 1440px;
+$min-content-width: 800px;
+$hpadding: 60px;
+
+$graphic-height: 400px;
+
+
+h1, h2 {
+	font-weight: 700;
+	margin-bottom: 1em;
+	line-height: 1.5em;
+}
+
+p {
+	margin-bottom: 1em;
+	line-height: 1.4em;
+}
+
+#slide-wrapper {
+	width: 100%;
+	
+	@include breakpoint($narrow) {
+		margin-top: 350px;
+	}
+	@include breakpoint($medium) {
+		margin-top: 350px;
+	}
+	@include breakpoint($wide) {
+		margin-top: 500px;
+		padding-bottom: 30px;
+		background: url("../img/linen3.jpg") 0 0 repeat fixed;
+	}
+	
+	section, footer {
+		margin-left: auto;
+		margin-right: auto;
+		
+		@include breakpoint($wide) {		
+			padding-left: $hpadding;
+			padding-right: $hpadding;
+			max-width: $max-content-width;
+		}
+	}
+}
+
+#hero {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: -1;
+	background: url("../img/hero-light-1920.jpg") no-repeat scroll 0 0 transparent;
+	background-size: cover;
+	
+	
+	#top-banner {
+		margin: 0;
+		background-color: #f5f5f5;
+		position: relative;
+		
+		h1 {
+			background-repeat: no-repeat;
+			background-attachment: scroll;
+			text-indent: -999px;
+			display: inline-block;
+			margin-bottom: 0;
+		}
+		
+		#social {
+			display: inline-block;
+			position: absolute;
+			
+			a {
+				text-decoration: none;
+				color: $primary-light;				
+				outline: none;
+			}
+
+			#twitter-link:hover {
+				color: #00aced;
+			}
+			
+			#linkedin-link:hover {
+				color: #0976b4;
+			}
+			
+			#google-plus-link:hover {
+				color: #df4a32;
+			}
+			
+			#facebook-link:hover {
+				color: #3b5998;
+			}
+		}
+	}
+	
+	h2 {
+		color: #fff;
+		text-indent: -9999px;
+		background-repeat: no-repeat;
+		background-position: 0 0;
+	}
+	
+	p {
+		color: $primary;
+	}
+	
+	form {
+		background-color: rgba(0, 0, 0, 0.15);
+		border-radius: 5px;
+		color: #333;
+		
+		input {
+			border: none;
+			border-radius: 5px;
+		}
+		
+		#request-consult {
+			background-color: $primary;
+			color: white;
+		}
+		
+		.message {
+			border-radius: 5px;
+			color: #FFFFFF;
+			margin-bottom: 5px;
+			margin-top: 25px;
+			padding: 5px 30px 5px 10px;
+			position: relative;
+			display: none;
+			
+			a {
+				color: $primary-very-light;
+			}
+			
+			a.close-link {
+				position: absolute;
+				top: 3px;
+				right: 3px;
+				font-size: 15px;
+				line-height: 1em;
+				color: rgba(255, 255, 255, 0.3);
+
+				&:hover {
+					color: #000;
+				}
+			}
+		}
+		
+		.success {
+			background-color: rgba(150, 200, 150, 0.75);
+		}
+		
+		.failure {
+			background-color: rgba(200, 150, 150, 0.75);
+		}
+		
+	}
+		
+	@include breakpoint($narrow) {
+		height: 350px;
+		
+		>* {
+			margin-left: 10%;
+		}
+		
+		#topbanner h1 {
+		    background-image: url("../img/ev-title-small.png");
+    		height: 24px;
+		    width: 100%;
+			background-position: center center;
+		}
+		
+		h2 {
+			background-image: url("../img/big-data-tagline-640.png");
+			background-size: 256px auto;
+			width: 256px;
+			height: 50px;
+			margin-top: 15px;
+		}
+		
+		p {
+			font-size: 12px;
+			margin-bottom: 10px;
+		}
+		
+		form {
+			padding: 3%;
+			width: 74%;
+			
+			input {
+				width: 95%;
+				font-size: 15px;
+				height: 12px;
+				display: block;
+				padding: 5px;
+			}
+			
+			#request-consult {
+				height: 30px;
+				margin-top: 12px;
+				width: 100%;
+			}
+			
+			span {
+				display: block;
+				width: 100%;
+				margin: 4px 0;
+				text-align: center;
+			}
+			
+			.message {
+				margin-top: 10px;
+			}
+		}
+		
+		#social {
+			display: none !important;
+		}
+	}
+	@include breakpoint($medium) {
+		height: 350px;
+		
+		>* {
+			margin-left: 5%;
+		}
+		
+		#top-banner {
+			h1 {
+				background-image: url("../img/ev-title.png");
+				background-position: center center;
+				background-size: auto 40px;
+				height: 50px;
+				width: 170px;
+				margin-left: 15px;
+			}
+			
+			#social {
+				top: 15px;
+				right: 15px;
+				a {
+					font-size: 20px;
+					margin-left: 15px;
+				}
+			}
+		}
+		
+		h2 {
+			background-image: url("../img/big-data-tagline-640.png");
+			background-size: contain;
+			width: 55%;
+			min-width: 362px;
+			height: 65px;
+			margin-top: 40px;
+		}
+		
+		
+		form {
+			padding: 10px;
+			max-width: 400px;
+			display: inline-block;
+			
+			input {
+				padding: 5px;
+			}
+			
+			span {
+				font-size: 14px;
+				margin: 0 5px;
+			}
+			
+			#phone {
+				width: 90px;
+			}
+			
+			#email {
+				width: 90px;
+			}
+			
+			#request-consult {
+				margin-left: 5px;
+			}
+			
+			.message {
+				font-size: 12px;
+			}
+		}
+	}
+	@include breakpoint($wide) {
+		height: 500px;
+		
+		>* {
+			margin-left: 10%;
+		}
+		
+		#top-banner {
+			h1 {
+				background-image: url("../img/ev-title.png");
+				background-position: center left;
+				background-size: auto 60px;
+				height: 75px;
+				width: 255px;
+				margin-left: 15px;
+			}
+			
+			#social {
+				top: 20px;
+				right: 15px;
+				a {
+					font-size: 32px;
+					margin-left: 15px;
+				}
+			}
+		}
+		
+		h2 {
+			background-image: url("../img/big-data-tagline-1280-light.png");
+			background-size: 640px auto;
+			width: 640px;
+			height: 130px;
+			margin-top: 70px;
+		}
+		
+		p {
+			font-size: 22px;
+		}
+	
+		form {
+			display: inline-block;
+			padding: 15px;
+			width: 610px;
+		
+			input {
+				height: 30px;
+				display: inline-block;
+				padding: 5px;
+				font-size: 18px;
+			}
+			
+			span {
+				margin: 0 5px;
+			}
+		
+			#request-consult {
+				margin-left: 20px;
+				height: 40px;
+			}
+		
+			#phone {
+				width: 150px;
+			}
+		
+			#email {
+				width: 200px;
+			}
+			
+			.failure {
+				font-size: 15px;
+			}
+		}
+	}
+}
+
+header {
+	background-color: #f5f5f5;	
+	
+	@include breakpoint($narrow) {
+		width: 100%;
+	}
+	@include breakpoint($medium) {
+		width: 100%;
+	}
+	@include breakpoint($wide) {
+		min-width: $min-content-width;
+	}
+}
+
+#top-nav {
+	color: $primary-light;
+	
+	@include breakpoint($narrow) {
+		padding: 7px;
+	}
+	@include breakpoint($medium) {
+		padding: 7px;
+	}
+	@include breakpoint($wide) {
+		max-width: $max-content-width;
+		padding: 15px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	
+	a {
+		text-decoration: none;
+		color: inherit;
+		display: block;
+	}
+
+	ul {
+		list-style: none outside none;
+		margin: 0;
+		padding: 0;
+		
+		@include breakpoint($wide) {
+			text-align: center;
+		}
+		
+		li {
+			@include breakpoint($narrow) {
+				height: 17px;
+				margin-bottom: 5px;
+			}
+			@include breakpoint($medium) {
+				height: 17px;
+				margin-bottom: 5px;
+			}
+			@include breakpoint($wide) {
+				display: inline-block;
+				width: 18%;
+				margin-right: 2%;
+				vertical-align: top;
+				font-size: 18px;
+			
+				&:last-child {
+					margin-right: 0;
+				}
+			
+				&:hover {
+					color: #528496;
+				}
+			}
+			
+			i {
+				@include breakpoint($narrow) {
+					display: inline-block;
+					width: 20px;
+					margin-right: 10px;
+				}
+				@include breakpoint($medium) {
+					display: inline-block;
+					width: 20px;
+					margin-right: 10px;
+				}
+				@include breakpoint($wide) {
+					display: block;
+					margin-bottom: 15px;
+					font-size: 2em;
+				}
+			}
+		}
+	}
+}
+
+section {
+	border-bottom: 10px solid #f5f5f5;
+	background-color: #fff;
+	
+	@include breakpoint($narrow) {
+		padding-left: 2px;
+	}
+	@include breakpoint($medium) {
+		padding-left: 5px;
+	}
+	@include breakpoint($wide) {
+		overflow: hidden;
+	}
+	
+	&:last-of-type {
+		border-bottom: none;
+	}
+	
+	h1 {
+		color: $primary;
+		margin-top: 0;
+		
+		
+		@include breakpoint($narrow) {
+			font-size: 20px;
+			line-height: 1.2em;
+		}
+		@include breakpoint($medium) {
+			font-size: 22px;
+			line-height: 1.2em;
+		}
+		@include breakpoint($wide) {
+			font-size: 28px;
+		}
+	}
+}
+
+section.svc-overview {
+	@include breakpoint($narrow) {
+		padding-top: 5px;
+	}
+	@include breakpoint($medium) {
+		padding-top: 5px;
+	}	
+	@include breakpoint($wide) {
+		min-height: $graphic-height;
+	}
+
+	.content {
+		@include breakpoint($wide) {
+			padding-top: 70px;
+			float: right;
+			width: 45%;
+		}
+	}
+	
+	&:nth-child(odd) .content {
+		@include breakpoint($wide) {
+			float: left;
+		}
+	}
+	
+	.graphic {
+		background-size: cover;
+		background-color: #ddd;
+		background-position: center top;
+		position: relative;
+
+		@include breakpoint($narrow) {
+			height: 200px;
+		}
+		@include breakpoint($medium) {
+			@include breakpoint(max-height 400px) {
+				height: 200px;
+			}
+			@include breakpoint(min-height 401px) {
+				background-position: center center;
+				height: 290px;
+				max-width: 500px;
+				margin-left: auto;
+				margin-right: auto;
+			}
+		}
+		@include breakpoint($wide) {
+			width: 45%;
+			height: $graphic-height;
+			border-width: 1px;
+			border-color: #eee;
+			border-style: none solid;
+	
+			float: left;
+			margin-right: 5%;
+		}
+	}
+	
+	&:nth-child(odd) .graphic {
+		@include breakpoint($wide) {
+			float: right;
+			margin-right: 0;
+			margin-left: 5%;
+		}
+	}
+
+	p {
+		
+		@include breakpoint($narrow) {
+			font-size: 14px;
+		}
+		@include breakpoint($medium) {
+			font-size: 18px;
+		}
+		@include breakpoint($wide) {
+			font-size: 22px;
+		}
+	}
+	
+	a.more-info {
+		color: $primary-light;
+		text-decoration: none;
+	}
+}
+
+
+#modeling {
+	// for ribbon
+	position: relative;
+}
+
+#team {
+	padding-top: 30px;
+	padding-bottom: 30px;
+	
+	.member {
+		@include breakpoint($medium) {
+			min-height: 200px;
+			margin-bottom: 10px;
+			img {
+				height: 200px;
+				float: right;
+				margin-left: 5px;
+			}
+		}
+		@include breakpoint($wide) {
+			float: left;
+			margin-right: 5%;
+			width: 30%;			
+		
+			&:last-of-type {
+				margin-right: 0;
+			}
+			
+			img {
+				width: 55%;
+			}
+		}
+		
+		h2 {
+			margin-top: 1em;
+			margin-bottom: 1em;
+			font-size: 22px;
+			color: $secondary-light;
+		}
+		
+	}
+}

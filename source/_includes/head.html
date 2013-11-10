@@ -1,0 +1,42 @@
+<head>
+  <meta charset="utf-8">
+  
+  <link href='http://fonts.googleapis.com/css?family=Oxygen:300,700' rel='stylesheet'>
+  <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+  <link href="{{ root_url }}/stylesheets/main.css" rel="stylesheet" type="text/css">
+  {% if page.stylesheets %}
+    {% for stylesheet in page.stylesheets %}
+		<link href="{{ stylesheet }}" rel="stylesheet" type="text/css">
+    {% endfor %}
+  {% endif %}
+    
+  <script src="javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+  {% if page.scripts %}
+    {% for script in page.scripts %}
+      <script src="{{ script }}"></script>
+    {% endfor %}
+  {% endif %}
+  
+  <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>
+  <link href="/favicon.ico" rel="shortcut icon">
+
+  {% if page.description %}<meta name="description" content="{{ page.description }}">{% endif %}
+  {% if page.keywords %}<meta name="keywords" content="{{ page.keywords }}">{% endif %}
+  
+  <!--[if lt IE 9]>
+  <script src="{{ root_url }}/javascripts/html5shiv.js"></script>
+  <![endif]-->
+  
+  <!-- http://t.co/dKP3o1e 
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  {% capture canonical %}{{ site.url }}{% if site.permalink contains '.html' %}{{ page.url }}{% else %}{{ page.url | remove:'index.html' }}{% endif %}{% endcapture %}
+  <link rel="canonical" href="{{ canonical }}">
+  <link href="{{ root_url }}/favicon.ico" rel="icon">
+</head>
