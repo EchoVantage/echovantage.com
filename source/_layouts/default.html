@@ -5,7 +5,7 @@
 <body {% if page.body_id %} id="{{ page.body_id }}" {% endif %}>
 {% include third-party/google-tag-manager.html %}
 
-<div id="slide-wrapper">
+<div id="wrapper">
 	{{ content | expand_urls: root_url }}
 </div>
 </body>

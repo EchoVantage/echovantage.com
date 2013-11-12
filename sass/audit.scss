@@ -1,22 +1,85 @@
 @import "base";
+@import "breakpoint";
 
-#audit-steps {
-	list-style: {
-		position: outside;
-		type: decimal;
+.intro {
+	aside {
+		font: {
+			family: Georgia, serif;
+			style: italic;
+		}
+		color: $secondary-very-light;
+		line-height: 1.3em;
 	}
 	
-	margin: 50px;
-	
-	li {
-		font-size: 50px;
-		margin-bottom: 30px;
-		vertical-align: top;
+	@include breakpoint($narrow) {
+		aside {
+			display: none;
+		}
+	}
+	@include breakpoint($medium) {
+		aside {
+			display: none;
+		}
+	}
+	@include breakpoint($wide) {
+		overflow: auto;
+		min-height: 400px;
+		aside {
+			font: {
+				family: Georgia, serif;
+				style: italic;
+			}
+			color: $secondary-very-light;
+			line-height: 1.3em;
+			
+			font-size: 75px;
+			border-left: 3px solid $frame-bg;
+			margin: {
+				left: 50px;
+				bottom: 50px;
+				top: 50px;
+			}
+			padding: {
+				left: 50px;
+				right: 50px;
+			}
 		
-		h2 {
-			font-size: 30px;
-			display: inline-block;
-			height: 100%;
+			width: 40%;
+			float: right;
+		}
+	}
+}
+
+.item {
+	border-top: 5px solid $frame-bg;
+	
+	@include breakpoint($wide) {
+		padding-top: 50px;
+		
+		&:nth-of-type(odd) .hook {
+			text-align: right;
+		}
+		
+		&:nth-of-type(even) .hook {
+			text-align: left;
+		}
+	}
+	
+	&:nth-of-type(odd) .hook {
+		color: $secondary-light;
+	
+		em {
+			color: $primary;
+			font-weight: bold;
+		}
+	}
+
+	&:nth-of-type(even) .hook {
+		color: $primary-light;
+	
+		em {
+			color: $secondary;
+			font-weight: bold;
 		}
 	}
 }

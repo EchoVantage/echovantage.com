@@ -2,66 +2,363 @@
 @import "base";
 @import "breakpoint";
 
+
+$graphic-height: 400px;
+
 body {
 	font-family: Oxygen, sans-serif;
 	color: #666;
+	
+
+	p {
+		margin-bottom: 0.8em;
+		line-height: 1.2em;
+		
+		@include breakpoint($narrow) {
+			font-size: 16px;
+		}
+		@include breakpoint($medium) {
+			font-size: 18px;
+		}
+		@include breakpoint($wide) {
+			font-size: 20px;
+		}
+	}
+}
+
+#wrapper {
+	width: 100%;
+	
+	@include breakpoint($wide) {
+		padding-bottom: 30px;
+		background: url("../img/linen3.jpg") 0 0 repeat fixed;
+	}
+	
+	> section, > div, footer {
+		margin-left: auto;
+		margin-right: auto;
+		
+		@include breakpoint($wide) {		
+			padding-left: $hpadding;
+			padding-right: $hpadding;
+			max-width: $max-content-width;
+		}
+	}
+	
+	> section, > div {
+		background-color: $content-bg;
+	}
 }
 
 .global-header {
-	background-color: #f5f5f5;
+	background-color: $frame-bg;
 	position: relative;
-	height: 100px;
 	
-	h1 {
-		background: {
-			image: url('../img/ev-title.png');
-			size: auto 60px;
-			position: left center;
-			repeat: no-repeat;
+	@include breakpoint($narrow) {
+		h1 {
+		    background-image: url("../img/ev-title-small.png");
+    		height: 24px;
+		    width: 100%;
+			background-position: center center;
 		}
-		width: 255px;
-		height: 100%;
-		margin-left: 15px;
+	}
+	@include breakpoint($medium) {
+		h1 {
+			background: {
+				image: url("../img/ev-title.png");
+				position: center center;
+				size: auto 40px;
+			}
+			height: 50px;
+			width: 170px;
+			margin-left: 15px;
+		}
+	}
+	@include breakpoint($wide) {
+		height: 100px;
+		max-width: $max-content-width;
+		margin: {
+			left: auto;
+			right: auto;
+		}
+		padding: {
+			left: 60px;
+			right: 60px;
+		}
+		
+	
+		h1 {
+			background: {
+				image: url('../img/ev-title.png');
+				size: auto 60px;
+				position: left center;
+				repeat: no-repeat;
+			}
+			width: 255px;
+			height: 100%;
+		}
+	}
+	
+	h1 {	
 		text-indent: -9999px;
+		background: {
+			repeat: no-repeat;
+			attachment: scroll;
+		}
 	}
 }
 
 #header-nav {
-	position: absolute;
-	right: 30px;
-	top: 15px;
+	@include breakpoint($narrow) {
+		display: none;
+	}
+	@include breakpoint($medium) {
+		display: none;
+	}
+	@include breakpoint($wide) {
+		position: absolute;
+		right: 30px;
+		top: 30px;
 	
-	li {
-		display: inline-block;
-		text-align: center;
-		margin-left: 15px;
-		width: 123px;
-		vertical-align: top;
+		li {
+			display: inline-block;
+			text-align: center;
+			margin-left: 15px;
+			width: 90px;
+			vertical-align: top;
 		
-		a {
-			display: block;
-			color: $primary-light;
-			text-decoration: none;
-			
-			&:hover {
-				color: $primary;
-			}
-			
-			i {
+			a {
 				display: block;
-				font-size: 25px;
-				margin-bottom: 10px;
+				color: $primary-light;
+				text-decoration: none;
+				font-size: 10px;
+			
+				&:hover {
+					color: $primary;
+				}
+			
+				i {
+					display: block;
+					font-size: 25px;
+					margin-bottom: 10px;
+				}
 			}
 		}
 	}
 }
 
-footer {
-	padding-top: 15px;
-	padding-bottom: 15px;
-	background-color: #f5f5f5;
+.intro {
+	h1 {
+		color: $primary;
+		font-weight: bold;
+		
+		@include breakpoint($narrow) {
+			font-size: 30px;
+			margin: {
+				top: 10px;
+				bottom: 20px;
+			}
+		}
+		@include breakpoint($medium) {
+			font-size: 40px;
+			margin: {
+				top: 15px;
+				bottom: 30px;
+			}
+		}
+		@include breakpoint($wide) {
+			font-size: 70px;
+			margin: {
+				bottom: 50px;
+				top: 30px;
+			}
+		}
+	}
+}
 
-	p {
+section.item {
+	background-color: $content-bg;
+	
+	@include breakpoint($narrow) {
+		padding: {
+			top: 5px;
+			left: 2px;
+		}
+	}
+	@include breakpoint($medium) {
+		padding: {
+			top: 5px;
+			left: 5px;
+		}
+	}	
+	@include breakpoint($wide) {
+		overflow: hidden;
+		min-height: $graphic-height;
+	}
+
+	.content {
+		@include breakpoint($wide) {
+			float: left;
+			width: 45%;
+		}
+	}
+	
+	&:nth-of-type(odd) .content {
+		@include breakpoint($wide) {
+			float: right;
+		}
+	}
+	
+	
+	h1.hook {
+		@include breakpoint($narrow) {
+			font-size: 30px;
+			margin-bottom: 15px;
+		}
+		@include breakpoint($medium) {
+			font-size: 30px;
+			margin-bottom: 15px;
+		}
+		@include breakpoint($wide) {
+			font-size: 60px;
+			padding: {
+				top: 50px;
+				bottom: 50px;
+			}
+			height: 150px;
+			width: 45%;
+		}
+	}
+	
+	.hook {
+		@include breakpoint($wide) {
+			width: 45%;
+		}
+	}
+	
+	&:nth-of-type(odd) .hook {
+		@include breakpoint($wide) {
+			float: left;
+			margin-right: 0;
+			margin-left: 5%;
+		}
+	}
+	
+	&:nth-of-type(even) .hook {
+		@include breakpoint($wide) {
+			float: right;
+			margin-right: 0;
+			margin-left: 5%;
+		}
+	}
+	
+	.graphic {
+		background-size: cover;
+		background-position: center top;
+		position: relative;
+		
+		
+		@include breakpoint($narrow) {
+			height: 200px;
+		}
+		@include breakpoint($medium) {
+			@include breakpoint(max-height 400px) {
+				height: 200px;
+			}
+			@include breakpoint(min-height 401px) {
+				background-position: center center;
+				height: 290px;
+				max-width: 500px;
+				margin-left: auto;
+				margin-right: auto;
+			}
+		}
+		@include breakpoint($wide) {
+			height: $graphic-height !important;
+			padding: {
+				top: 0;
+				bottom: 0;
+			}
+			border: {
+				width: 1px;
+				color: #eee;
+				style: none solid;
+			}
+		}
+	}
+	
+	.content h1 {
+		color: $primary;
+		margin-top: 0;
+		
+		
+		@include breakpoint($narrow) {
+			font-size: 20px;
+			line-height: 1.2em;
+		}
+		@include breakpoint($medium) {
+			font-size: 22px;
+			line-height: 1.2em;
+		}
+		@include breakpoint($wide) {
+			font-size: 28px;
+		}
+	}
+	
+	a.more-info {
+		color: $primary-light;
+		text-decoration: none;
+	}
+}
+
+footer {
+	padding: {
+		top: 15px;
+		bottom: 15px;
+		left: 15px;
+	}
+	background-color: $frame-bg;
+
+	> div {
+		float: left;
+		width: 250px;
+		color: $primary-light;
+		
+		h3 {
+			font-size: 18px;
+			font-weight: bold;
+			color: $primary;
+			margin-bottom: 10px;
+		}
+		
+		a {
+			color: inherit;
+			text-decoration: none;
+			
+			&:hover {
+				color: $secondary;
+			}
+		}
+		
+		li {
+			margin-bottom: 5px;
+		}
+		
+		p {
+			margin-bottom: 10px;
+		}
+	}
+	
+	#contact {
+		div {
+			margin-bottom: 10px;
+		}
+	}
+
+	#copyright {
+		clear: both;
 		margin: 0;
+		padding-top: 20px;
+		color: $primary;
 	}
 }

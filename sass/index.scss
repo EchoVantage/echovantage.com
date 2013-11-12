@@ -2,14 +2,6 @@
 @import "breakpoint";
 
 
-// Desktop Display Widths and Heights
-$max-content-width: 1440px;
-$min-content-width: 800px;
-$hpadding: 60px;
-
-$graphic-height: 400px;
-
-
 h1, h2 {
 	font-weight: 700;
 	margin-bottom: 1em;
@@ -21,9 +13,7 @@ p {
 	line-height: 1.4em;
 }
 
-#slide-wrapper {
-	width: 100%;
-	
+#wrapper {
 	@include breakpoint($narrow) {
 		margin-top: 350px;
 	}
@@ -32,19 +22,6 @@ p {
 	}
 	@include breakpoint($wide) {
 		margin-top: 500px;
-		padding-bottom: 30px;
-		background: url("../img/linen3.jpg") 0 0 repeat fixed;
-	}
-	
-	section, footer {
-		margin-left: auto;
-		margin-right: auto;
-		
-		@include breakpoint($wide) {		
-			padding-left: $hpadding;
-			padding-right: $hpadding;
-			max-width: $max-content-width;
-		}
 	}
 }
 
@@ -62,7 +39,7 @@ p {
 	
 	#top-banner {
 		margin: 0;
-		background-color: #f5f5f5;
+		background-color: $frame-bg;
 		position: relative;
 		
 		h1 {
@@ -369,7 +346,7 @@ p {
 }
 
 header {
-	background-color: #f5f5f5;	
+	background-color: $frame-bg;	
 	
 	@include breakpoint($narrow) {
 		width: 100%;
@@ -459,128 +436,19 @@ header {
 	}
 }
 
-section {
-	border-bottom: 10px solid #f5f5f5;
-	background-color: #fff;
-	
-	@include breakpoint($narrow) {
-		padding-left: 2px;
-	}
-	@include breakpoint($medium) {
-		padding-left: 5px;
-	}
-	@include breakpoint($wide) {
-		overflow: hidden;
-	}
+.item {
+	border-bottom: 10px solid $frame-bg;
 	
 	&:last-of-type {
 		border-bottom: none;
 	}
 	
-	h1 {
-		color: $primary;
-		margin-top: 0;
-		
-		
-		@include breakpoint($narrow) {
-			font-size: 20px;
-			line-height: 1.2em;
-		}
-		@include breakpoint($medium) {
-			font-size: 22px;
-			line-height: 1.2em;
-		}
-		@include breakpoint($wide) {
-			font-size: 28px;
-		}
-	}
-}
-
-section.svc-overview {
-	@include breakpoint($narrow) {
-		padding-top: 5px;
-	}
-	@include breakpoint($medium) {
-		padding-top: 5px;
-	}	
-	@include breakpoint($wide) {
-		min-height: $graphic-height;
-	}
-
 	.content {
 		@include breakpoint($wide) {
 			padding-top: 70px;
-			float: right;
-			width: 45%;
 		}
-	}
-	
-	&:nth-child(odd) .content {
-		@include breakpoint($wide) {
-			float: left;
-		}
-	}
-	
-	.graphic {
-		background-size: cover;
-		background-color: #ddd;
-		background-position: center top;
-		position: relative;
-
-		@include breakpoint($narrow) {
-			height: 200px;
-		}
-		@include breakpoint($medium) {
-			@include breakpoint(max-height 400px) {
-				height: 200px;
-			}
-			@include breakpoint(min-height 401px) {
-				background-position: center center;
-				height: 290px;
-				max-width: 500px;
-				margin-left: auto;
-				margin-right: auto;
-			}
-		}
-		@include breakpoint($wide) {
-			width: 45%;
-			height: $graphic-height;
-			border-width: 1px;
-			border-color: #eee;
-			border-style: none solid;
-	
-			float: left;
-			margin-right: 5%;
-		}
-	}
-	
-	&:nth-child(odd) .graphic {
-		@include breakpoint($wide) {
-			float: right;
-			margin-right: 0;
-			margin-left: 5%;
-		}
-	}
-
-	p {
-		
-		@include breakpoint($narrow) {
-			font-size: 14px;
-		}
-		@include breakpoint($medium) {
-			font-size: 18px;
-		}
-		@include breakpoint($wide) {
-			font-size: 22px;
-		}
-	}
-	
-	a.more-info {
-		color: $primary-light;
-		text-decoration: none;
 	}
 }
-
 
 #modeling {
 	// for ribbon
