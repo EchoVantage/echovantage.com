@@ -287,29 +287,30 @@ section.item {
 		}
 	}
 	
-	.content h1 {
-		color: $primary;
-		margin-top: 0;
-		
-		
-		@include breakpoint($narrow) {
-			font-size: 20px;
-			line-height: 1.2em;
-		}
-		@include breakpoint($medium) {
-			font-size: 22px;
-			line-height: 1.2em;
-		}
-		@include breakpoint($wide) {
-			font-size: 28px;
-		}
-	}
-	
 	a.more-info {
 		color: $primary-light;
 		text-decoration: none;
 	}
 }
+
+section  h1 {
+	color: $primary;
+	margin-top: 0;
+	
+	
+	@include breakpoint($narrow) {
+		font-size: 20px;
+		line-height: 1.2em;
+	}
+	@include breakpoint($medium) {
+		font-size: 22px;
+		line-height: 1.2em;
+	}
+	@include breakpoint($wide) {
+		font-size: 28px;
+	}
+}
+
 
 footer {
 	padding: {
